@@ -1,0 +1,988 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-color:#c9a227 ;
+    --second-color: #dbb42c;
+    --thirds-color:#a47e1b;
+    --font1-color: #cfcece ;
+    --fourth-color: ;
+    --main2-color: ;
+    --fivth-color:  ;
+    --first-font: "Arima", system-ui;  
+    --second-font: "Dosis", sans-serif;
+    --third-font:"Tilt Neon", sans-serif;
+    --fourth:red;
+    --height: 0% ;
+    --width: 0% ;
+    --third-color: ;
+    --fourth-color: ;
+    --third-color: ;
+    --fivth-color:  ;
+}
+/* ::selection {
+    background-color: ;
+    color: ;
+} */
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* ::-webkit-scrollbar-corner {
+    background: ;
+}
+
+::-webkit-scrollbar-track {
+    background-color: ;
+}
+
+::-webkit-scrollbar-thumb {
+    background: ;
+    border-radius: 10px;
+} */
+
+.light {
+    --main-color: ;
+    --second-color: ;
+    --third-color: ;
+    --fourth-color: ;
+    --fivth-color: ;
+}
+.hide {
+    display: none;
+}
+
+#arrow {
+    display: none;
+    background: transparent;
+    position: fixed;
+    bottom: 5px;
+    right: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    animation: back 1s linear infinite alternate;
+    height: 40px;
+    width: 40px;
+    z-index: 99999999;
+    fill: var(--third-color);
+}
+#moon{
+    display: none;
+    fill: #000000;
+}
+#sun{
+    fill: #ffe100;
+}
+
+
+
+.reveal {
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.reveal.active {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.bottom {
+    position: relative;
+    transform: translateY(-200px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.bottom.active {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.left {
+    position: relative;
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.left.active {
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.right {
+    position: relative;
+    transform: translateX(100px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.right.active {
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.rotate{
+    position: relative;
+    transform: rotate(90deg);
+    transition: all 2s ease;
+}
+.rotate.active{
+    transform: rotate(0deg);
+}
+
+
+@keyframes slidetop {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes slidebottom {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes slideleft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes slideright {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes back {
+    from {
+        bottom: 5px;
+    }
+    to {
+        bottom: 10px;
+    }
+}
+hr {
+    outline: var(--third-color) solid 5px;
+}
+
+body {
+    overflow-x: hidden;
+    cursor: url(cursor.png), auto;
+}
+.loader{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100vh;
+    background-color: #ddd;
+    transition:  opacity 3s , visibility 3s ;
+    transition-delay: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 323;
+}
+.loader--hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+/* ------------------------------------------------------------------- */
+/* ------------------------------------------------------------------- */
+/* ------------------------------------------------------------------- */
+
+/************************START hero SEC***********************/
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient( to bottom, transparent 30% ,#000000), url("contacthero.jpeg") no-repeat center ; 
+    background-size: cover;
+    filter: blur(0.5) ;
+    gap: 50px;
+}
+.hero .texts{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: opacity 2s linear ;
+
+}
+.hero .texts .head{
+    padding-top: 40px;
+    font-size: 90px;
+    letter-spacing: 25px;
+    font-family: var(--first-font);
+    font-weight: 700;
+    color: var(--second-color);
+    animation: opacity 2s linear ;
+}
+
+.hero p:nth-child(2){
+    color: var(--font1-color);
+    font-family: var(--second-font);
+    font-size: 17px;
+    font-weight: 600;
+    width: 50%; 
+}
+.hero p:nth-child(2) span{
+    display: block;
+    margin-left: 70px;
+}
+
+.hero i{
+    font-size: 50px;
+    color: #a47e1b;
+    animation: opacity 2s linear ;
+}
+
+/************************End hero SEC***********************/
+
+/************************START Contact SEC***********************/
+
+.secContact{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(home1.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+.secContact .info{
+    width: 80%;
+    height: 80vh;
+    background-color: transparent;
+    background-color: #383838;
+    box-shadow:0 0px 20px 0 #6a6969;
+    backdrop-filter: blur( 20px );
+    border-radius: 50px;
+    display: flex;
+}
+.secContact .info .photoleft{
+    width: 35%;
+    background-image: url(about3.jpg);
+    background-position: center;
+    background-size: cover;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    display:flex;
+    align-items: flex-end;
+}
+.secContact .info .inforight{
+    width: 65%;
+    display: flex;
+}
+.secContact .info .inforight .divLe{
+    width: 45%;
+
+}
+.secContact .info .inforight .divLe .p-title{
+    font-size: 55px;
+    padding: 15px 0 0 40px ;
+    font-family: "Arima", system-ui;  
+    font-weight: bold;
+    color: var(--second-color);
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+.secContact .info .inforight .divLe .someinfo{
+    margin-left: 20px;
+    font-size: 13px;
+    font-family: var(--third-font);
+    color: var(--font1-color);
+}
+.divLe .addr{
+    width: 100%;
+    margin-top: 40px;
+    margin-left:20px ;
+    display: flex;
+}
+ .divLe .addr p{
+    font-size: 13px;
+    padding-top: 5px;
+    padding-left: 5px;
+    color: var(--font1-color);
+    font-family: var(--third-font);
+
+}
+.divLe .email {
+    padding-top: 2px;
+    margin-top: 25px;
+}
+.divLe .phone {
+    padding-top: 2px;
+    margin-top: 25px;
+}
+.divLe .whats{
+    padding-top: 2px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+.divLe .media{
+    margin-left: 40px;
+    margin-top: 70px;
+    display: flex;
+    gap: 40px;
+
+}
+.fields{
+    padding: 60px 0 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 55px;
+    width: 55%;
+}
+.fields .in, .in1{
+    width: 88%;
+    padding-left: 10px;
+    font-family: var(--third-font);
+    background-color:var(--font1-color) ;
+    font-size: 13px;
+
+}
+.fields .in, .in1:focus{
+    outline: none;
+    border: none;
+    color: #1d3c02;
+
+}
+.fields .in{
+    height: 7%;
+    border: none;
+    border-radius: 200px;
+
+}
+.fields .in1{
+    height: 30%;
+    border: none;
+    padding-top: 10px;
+    border-radius: 20px;
+
+}
+.fields a {
+    width: 32%;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: var(--first-font);
+    border-radius: 20px;
+    padding: 10px 40px 7px;
+    margin-top: 20px;
+    color: whitesmoke;
+    background-color:var(--second-color) ;
+    border: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 0 10px #d6ad44;
+}
+.fields a:hover {
+    background-color: var(--main-color);
+    box-shadow: 0px 15px 20px #dbb52ca0;
+    color: #fff;
+    transform: translateY(-7px);
+}
+.fields a:active {
+    transform: translateY(-1px);
+}
+/************************END Contact SEC***********************/
+
+
+
+/************************START OVERVIEW US SEC***********************/
+
+.overviewUs{
+    width: 100%;
+    height: 110vh;
+    background-image: url(home1^2.jpeg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+.overviewUs .titleAndpar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.overviewUs .titleAndpar p:nth-child(1){
+    font-size: 50px;
+    font-weight: 700;
+    font-family: var(--first-font);
+    color: var(--second-color);
+    text-align: center;
+    padding-top: 15px;
+}
+.overviewUs .titleAndpar p:nth-child(2),:nth-child(3){
+    font-family: var(--third-font);
+    color: var(--font1-color);
+}
+.overviewUs .content{
+    width: 70%;
+    height: 78vh;
+    background-color: #383838;
+    border-radius: 20px;
+    display: flex;
+    box-shadow:0 0px 15px 0 #6a6969;
+}
+.overviewUs .content .secphotoright{
+    width: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #2b5c3b; */
+    /* position: relative; */
+}
+.overviewUs .content .secphotoright img{
+    width: 80%;
+    height: 75%;
+    border-radius: 20px;
+}
+
+/* .overviewUs .content .secphotoright svg{
+    position: absolute;
+    top:15%;
+    right: 5%;
+    transform: rotate(40deg);
+} */
+.overviewUs .content .secleft{
+    width: 52%;
+    padding-top: 60px;
+    padding-left: 50px;
+}
+.overviewUs .content .secleft label {
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    font-family: var(--third-font);
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--second-color);  
+}
+.overviewUs .content .secleft .form-group1{
+    width: 100%;
+    /* background-color: #2b5c3b; */
+    display: flex;
+    gap: 35px;
+    margin-bottom: 20px;
+}
+.content .secleft .form-group1 input[type="text"]{
+    width: 105%;
+    padding: 8px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    background-color: var(--font1-color);
+}
+.content .secleft .form-group2 input[type="text"],
+textarea {
+    width: 78%;
+    padding: 8px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    background-color: var(--font1-color);
+
+}
+input,textarea:focus{
+    font-size: 15px;
+    outline: none;
+    border: none;
+    color: #000;
+}
+input[type="submit"] {
+    width: 30%;
+    margin-left: 110px;
+    padding: 10px 20px;
+    background-color: var(--second-color);
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: -8px 8px 5px var(--thirds-color);
+}
+
+input[type="submit"]:hover {
+    background-color: #b69121;
+}
+
+/************************END OVERVIEW US SEC***********************/
+
+
+/************************START TEAM SEC***********************/
+.team{
+    width: 100%;
+    height: 100vh;
+    background-image: url(home1.jpeg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.team > p {
+    color: var(--second-color);
+    font-size: 50px;
+    font-family:var(--first-font) ;
+    gap: 20px;
+    margin-top: 20px;
+    text-transform: capitalize;
+    font-weight: 700 ;
+}
+.team .content{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+.team .content .persons{
+    width: 450px;
+    height: 450px;
+    border-left: 10px dashed var(--second-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.team .content .persons >img{
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    transform: translate(-50% , -50%);
+    border: 3px solid var(--main-color);
+    background-color: #fff;
+}
+.team .content .persons .person1{
+    top: 35%;
+    left: 0%;
+}
+.team .content .persons .person3{
+    top: 0%;
+    left: 50%;
+}
+.team .content .persons .person2{
+    top: 13%;
+    left: 18%;
+}
+.team .content .persons .person4{
+    top: 87%;
+    left: 18%;
+}
+.team .content .persons .person5{
+    top: 65%;
+    left: 0%;
+}
+.team .content .persons .person6{
+    top: 95%;
+    left: 50%;
+}
+.team .content .persons .main{
+    width: 35%;
+    border: 10px solid rgb(223, 223, 223);
+    border-radius: 50%;
+    /* box-shadow: 0px 10px 10px #5d5d5d; */
+    box-shadow: 0px 10px 10px var(--second-color);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.team .content .persons .main img{
+    width: 100%;
+}
+.team .content .info{
+    width: 40%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    padding-inline: 10px;
+    margin-bottom: 20px;
+}
+.team .content .info span{
+    font-size: 50px;
+    font-weight: 900;
+    color: var(--second-color);
+}
+.team .content .info > p{
+    color: var(--font1-color);
+    font-family: var(--second-font);
+    font-size: 20px;
+    font-weight: 600;
+}
+.team .content .info .last{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    margin-top: 20px;
+    /* background-color: #0866ff; */
+}
+.team .content .info .last .accs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.team .content .info .last .accs a{
+    text-decoration: none;
+    color: var(--main-color) ;
+    background: #fff;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+.team .content .info .last .accs .link:hover{
+    background-color: #a47e1b;
+}
+.team .content .info .last .accs a:hover{
+    color: #fff;
+}
+.team .content .info .last .person {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--second-color);
+}
+.team .content .info .last .person p:nth-child(1){
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    width: fit-content;
+    text-transform: capitalize;
+}
+.team .content .info .last .person p:nth-child(2){
+    margin: 0;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+/* --------------------------------------- */
+/* --------------------------------------- */
+/* --------------------------------------- */
+@media (max-width:767px) {
+    .hero{
+        gap: 100px;
+    }
+    .hero .texts .head {
+        font-size: 4rem;
+        letter-spacing: 10px;
+    }
+    .hero p:nth-child(2){
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        font-size: 1rem;
+        gap: 20px;
+    }
+    .hero p:nth-child(2) span{
+        margin-left: 0;
+
+    }
+    .secContact{
+        height: auto;
+        
+    }
+    .secContact .info {
+        width: 90%;
+        height: auto;
+        /* justify-content: center; */
+        /* align-items: center; */
+        flex-direction: column;
+        padding-bottom: 50px;
+    }
+    .secContact .info .photoleft {
+        width: 100%;
+        height: 300px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-left-radius: 0;
+    }
+    .secContact .info .inforight {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 50px;
+    }
+    .secContact .info .inforight .divLe {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 40px;
+    }
+    .secContact .info .inforight .divLe .p-title {
+        text-align: center;
+        font-size: 4rem;
+        margin-bottom: 0;
+        padding: 0;
+    }
+    .secContact .info .inforight .divLe .someinfo {
+        padding-inline: 0px;
+        margin-left: 0px;
+        width: 100%;
+        text-align: center;
+        font-size: 0.9rem;
+        padding-inline: 5px;
+    }
+
+    .divLe .addr{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 10px;
+        margin-top: 0;
+        margin-left: 0;
+    }
+    .divLe .media {
+        margin-left: 0px;
+        margin-top: 0px;
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        width: 90%;
+    }
+    .divLe .whats {
+        padding-top: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .fields {
+        padding: 0px 0 0 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        width: 100%;
+    }
+    .fields .in, .in1 {
+        width: 90%;
+    }
+
+    #name,#email{
+        height: 40px;
+    }
+    .fields .in1 {
+        height: 100px;
+    }
+    .fields a{
+        font-size: 1rem;
+        padding: 10px 40px;
+        width: auto;
+        margin-top: 0;
+    }
+
+
+    .overviewUs {
+        padding-top: 100px;
+        height: auto;
+    }
+    .overviewUs .titleAndpar {
+        gap: 25px;
+        justify-content: center;
+    }
+    .overviewUs .titleAndpar p:nth-child(1) {
+        font-size: 3rem;
+        padding-top: 0;
+    }
+
+    .overviewUs .titleAndpar p:nth-child(2), 
+    .overviewUs .titleAndpar p:nth-child(3) {
+        font-size: 1rem;
+        text-align: center;
+        width: 100%;
+        padding-inline: 5px;
+    }
+    .overviewUs .content {
+        width: 90%;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        gap: 50px;
+        padding-bottom: 50px;
+    }
+    .media svg{
+        width: 25px;
+    }
+    .overviewUs .content .secphotoright {
+        width: 100%;
+    }
+    .overviewUs .content .secleft {
+        width: 100%;
+        padding-top: 0px;
+        padding-left: 0px;
+    }
+    .overviewUs .content .secleft form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .overviewUs .content .secleft .form-group1 {
+        width: 95%;
+        margin-bottom: 0;
+    }
+    .overviewUs .content .secleft form .form-group2{
+        width: 100%;
+        text-align: center;
+    }
+    input[type="submit"] {
+        width: 30%;
+        margin-left: 0px;
+    }
+    .team{
+        height: auto;
+        padding-block: 100px;
+        gap: 50px;
+    }
+    
+    .team > p{
+        font-size: 2rem;
+        margin-top: 0;
+    } 
+    .team .content {
+        flex-direction: column;
+        gap: 0;
+    }
+    .team .content .persons {
+        width: 250px;
+        height: 250px;
+        border: 10px dashed var(--second-color);
+    }
+
+    .team .content .persons .main{
+        margin-bottom: 0;
+        width: 55%;
+    border: 5px solid rgb(223, 223, 223);
+    }
+    .team .content .persons .person1 {
+        top: 50%;
+        left: 100%;
+    }
+    .team .content .persons .person2 {
+        top: 10%;
+        left: 85%;
+    }
+    .team .content .persons .person3 {
+        top: 10%;
+        left: 15%;
+    }
+    .team .content .persons .person5 {
+        top: 50%;
+        left: 0%;
+    }
+    .team .content .persons .person4 {
+        top: 85%;
+        left: 15%;
+    }
+    .team .content .persons .person6 {
+        top: 85%;
+        left: 85%;
+    }
+    .team .content .info {
+        width: 100%;
+    padding-inline: 0;
+    margin-bottom: 0;
+    gap: 20px;
+    }
+    .team .content .info > p{
+        font-size: 1rem;
+    }
+    .team .content .info .last{
+        gap: 25px;
+        margin-top: 0;
+        flex-direction: column;
+    }
+}
