@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css" />
+    <link rel="stylesheet" href="checkout.css" />
+    <link rel="stylesheet" href="nav-footer.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <nav>
+        <div class="logo">
+            <p data-text="Foodie">Foodie</p>
+        </div>
+        <ul class="navlinks">
+            <li data-text="home" >
+                <a  href="home.html">home</a>
+                
+            </li>
+            <li data-text="menu" class="menubtn" >
+                <span>menu</span>
+                <div class="dropdown">
+                    <a href="menu.html">food meals</a>
+                    <a href="sweets.html">sweets</a>
+                    <a href="drinks.html">drinks</a>
+                    <a href="babys.html">kids</a>
+                </div>
+            </li>
+            <li data-text="contact" >
+                <a  href="contact.html">contact</a>
+            </li>
+            <li data-text="reservation">
+                <a  href="profile.html">profile</a>
+            </li>
+        </ul>
+        <div class="skills">
+            <div class="heart">
+                <i class="fa-solid fa-heart"></i>
+                <span>0</span>
+            </div>
+            <div class="cart">
+                <a href="order.html"><i class="fa-regular fa-cart-shopping"></i></a>
+                <span>0</span>
+            </div>
+            <a href="forms.html">logIn</a>
+            <a href="forms.html">signUp</a>
+
+
+            <!-- <div></div> -->
+        </div>
+
+    </nav>
+
+<div class="nav">
+    <div class="logo">
+        <p data-text="Foodie">Foodie</p>
+    </div>
+    <i class="fa-duotone fa-bars-staggered open" style="--fa-primary-color: #c9a227; --fa-secondary-color: #cfcece; --fa-secondary-opacity: 1"></i>
+    <i class="fa-duotone fa-x close" style="--fa-primary-color: #cfcece; --fa-secondary-color: #cfcece; --fa-secondary-opacity: 1;"></i>
+    <div class="links ">
+        <ul class="navlinks">
+            <li data-text="home" >
+                <a  href="home.html">home</a>
+            </li>
+            <li data-text="menu" class="menubtn" >
+                <span>menu</span>
+                <div class="dropdown">
+                    <a href="menu.html">food meals</a>
+                    <a href="sweets.html">sweets</a>
+                    <a href="drinks.html">drinks</a>
+                    <a href="babys.html">kids</a>
+                </div>
+            </li>
+            <li data-text="contact" >
+                <a  href="contact.html">contact</a>
+            </li>
+            <li data-text="reservation">
+                <a  href="profile.html">profile</a>
+            </li>
+        </ul>
+        <div class="skills">
+            <div class="heart">
+                <i class="fa-solid fa-heart">
+                    <span>0</span>
+
+                </i>
+            </div>
+            <div class="cart">
+                <a href="order.html"><i class="fa-regular fa-cart-shopping"></i></a>
+
+                    <span>0</span>
+                </i>
+            </div>
+            <a href="forms.html">logIn</a>
+            <a href="forms.html">signUp</a>
+            <!-- <div></div> -->
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+    <main>
+        <section class="checkout--section">
+            <div class="container">
+                <h1>Checkout</h1>
+                <div>
+                    
+                        <div class="forms--container">
+    
+                            <form action="" class="delivery--method">
+                                <h4 class="form--title">Delivery Method</h4>
+                                <div class="choose--method">
+                                    <div>
+                                        <input type="radio" name="delivery" id="restaurant" />
+                                        <i class="fa-solid fa-utensils"></i>
+                                        <span>Restaurant</span>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="delivery" id="delivery" />
+                                        <i class="fa-solid fa-truck"></i>
+                                        <span>Delivery</span>
+                                    </div>
+                                </div>
+                                <div class="delivery--form">
+                                    <div>
+                                        <div>
+                                            <label for="city">City</label>
+                                            <input type="text" name="city" id="city" />
+                                        </div>
+                                        <div>
+                                            <label for="address">Detailed Address</label>
+                                            <input type="text" name="address" id="address" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="payment--method">
+                                <h4 class="form--title">Payment Method</h4>
+                                <div>
+                                    <div class="method">
+                                        <div>
+                                            <label for="onDelivery">On delivery</label>
+                                            <input type="radio" name="payment" id="onDelivery" />
+                                        </div>
+                                        <div>
+                                            <label for="visa">
+                                                <img src="visa.svg" alt="visa" srcset="" />
+                                            </label>
+                                            <input type="radio" name="payment" id="visa" />
+                                        </div>
+                                    </div>
+                                    <form action="" method="get" class="card--information">
+                                        <div>
+                                            <h4 class="form--title">Credit Card</h4>
+                                            <div>
+                                                <label for="cardName">Card Holder</label>
+                                                <input type="text" name="cardHolder" id="cardName" />
+                                            </div>
+                                            <div>
+                                                <label for="cardName">Card Number</label>
+                                                <input type="text"
+                                                       name="cardNumber"
+                                                       id="cardNum"
+                                                       maxlength="16" />
+                                            </div>
+                                            <div>
+                                                <label for="exDate">Expairation Date</label>
+                                                <input type="text" name="expDate" id="exDate" />
+                                            </div>
+                                            <div>
+                                                <label for="cvc">Cvc</label>
+                                                <input type="text" name="cvc" id="cvc" maxlength="3" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    
+    
+                    <div class="order--info">
+                        <h4>Order Items</h4>
+                        <div class="items--container"></div>
+                        <div class="order--details">
+                            <p>TOTAL</p>
+                            <p id="totalPrice"><span></span>$</p>
+                        </div>
+                        <button id="checkoutBtn">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <footer>
+        <div class="footContainer">
+            <div class="logoName">
+                <h1>Foodie</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum exercitationem temporibus a commodi at saepe sapiente reiciendis voluptates eos! Veritatis dignissimos similique, ab aliquam quod rerum molestiae fuga earum eum?</p>
+                <div class="footIcon">
+                    <i class="fa-brands fa-linux"></i>
+                    <i class="fa-brands fa-apple"></i>
+                    <i class="fa-brands fa-windows"></i>
+                </div>
+                <div class="name_med">
+                    <p>Linux</p>
+                    <p>Mac</p>
+                    <p>Windows</p>
+                </div>
+            </div>
+            <div class="sec Links">
+                <h5>Links</h5>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Menu</a></li>
+                </ul>
+            </div>
+            <div class="sec Help">
+                <h5>Help</h5>
+                <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">Privacy</a></li>
+                </ul>
+            </div>
+            <div class="sec Contact">
+                <h5>Contact Us</h5>
+                <div class=" addr email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p class="em">RoanokeSwTokele125698@gmail.com</p>
+                </div>
+                <div class="addr phone">
+                    <i class="fa-solid fa-phone"></i>
+                    <p class="em">+20 236 733 567 25 </p>
+                </div>
+                <div class="media">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"> <i class="fa-brands fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>CopyRight 
+                <i class="fa-solid fa-at"></i>
+                All Rights Reserved Created By 
+                <span>Foodie</span>
+            </p>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="checkout.js"></script>
+    <script src="all.js"></script>
+    <script src="bootstrap.js"></script>
+</body>
+</html>
